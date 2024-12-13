@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kalnia:wght@100..700&family=Playball&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html{
+    @apply bg-yellow-100 scroll-smooth ;
+}
+body {
+    @apply bg-white tracking-wider max-w-screen-2xl mx-auto;
+}
+
+h1,h2{
+    @apply font-Kalnia text-3xl text-firstcolor font-semibold  capitalize;
+}
+h1{
+    @apply sm:text-5xl md:text-7xl lg:text-8xl;
+}
+h2{
+    @apply md:text-4xl  md:leading-tight lg:text-[40px] xl:text-6xl ;
+}
+h3{
+    @apply  font-Kalnia text-xl font-bold capitalize sm:text-2xl md:text-3xl;
+}
+h4{
+    @apply text-black font-Playball  font-medium sm:text-2xl md:text-3xl;
+}
+p{
+    @apply font-DMSans;
+}
+.nav_link{
+    @apply text-xl font-bold duration-300;
+}
+.nav_link:hover,
+.active{
+    @apply text-firstcolor;
+}
+.swiper-button-prev:after,.swiper-button-next:after{
+    @apply text-firstcolor  font-bold ;
+    font-size: 40px !important;
+}
+.flaver__item{
+    @apply duration-700;
+    
+}
+.flaver__item:hover img {
+    @apply scale-110 ; 
+    
+}
