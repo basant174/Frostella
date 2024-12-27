@@ -48,8 +48,14 @@ const swiper = new Swiper('.swiper', {
 
   const scrollUp = () => {
     const scrollUpBtn = document.getElementById('scroll_up');
-    console.log("scrollY:", window.scrollY);  // تحقق من قيمة scrollY
-    if (window.scrollY <= 250) {
+    const footer = document.querySelector('footer');  
+    const footerPosition = footer ? footer.offsetTop : document.body.scrollHeight;
+
+    console.log("footerPosition:", footerPosition);
+    console.log("window.scrollY:", window.scrollY);
+
+
+    if (window.scrollY + window.innerHeight >= footerPosition) {
         console.log("Changing position to bottom-4");
         scrollUpBtn.classList.remove("-bottom-1/2");
         scrollUpBtn.classList.add("bottom-4");
@@ -58,6 +64,15 @@ const swiper = new Swiper('.swiper', {
         scrollUpBtn.classList.add("-bottom-1/2");
         scrollUpBtn.classList.remove("bottom-4");
     }
-};
+  };
 
-window.addEventListener('scroll', scrollUp);
+  const scrollToTop = (event) => {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
+  };
+
+  document.getElementById('scroll_up').addEventListener('click', scrollToTop);
+  window.addEventListener('scroll', scrollUp);
